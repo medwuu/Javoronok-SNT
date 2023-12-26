@@ -37,22 +37,76 @@
         <div class="news-container">
             <div class="news-row">
                 <div class="news-item">
-                    <div class="news-img">
-                        <img src="src/img/news photo.png" alt="">
-                    </div>
-                    <div class="news-title">
-                        <h3>Заголовок<span class="news-important">Важно</span></h3>
-                        <a class="nav-link" href="news.php">Читать &#8594;</a>
-                    </div>
+                    <a class="news-item-inner" href="">
+                        <div class="news-img">
+                            <img src="src/img/news photo.png" alt="">
+                        </div>
+                        <div class="news-title">
+                            <h3>Заголовок<span class="news-important">Важно</span></h3>
+                            <a class="nav-link" href="news.php">Читать &#8594;</a>
+                        </div>
+                    </a>
                 </div>
                 <div class="news-item">
-                    <div class="news-img">
-                        <img src="src/img/news photo.png" alt="">
-                    </div>
-                    <div class="news-title">
-                        <h3>Заголовок</h3>
-                        <a class="nav-link" href="news.php">Читать &#8594;</a>
-                    </div>
+                    <a class="news-item-inner" href="">
+                        <div class="news-img">
+                            <img src="src/img/news photo.png" alt="">
+                        </div>
+                        <div class="news-title">
+                            <h3>Заголовок</h3>
+                            <a class="nav-link" href="news.php">Читать &#8594;</a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="news-row">
+                <div class="news-item">
+                    <a class="news-item-inner" href="">
+                        <div class="news-img">
+                            <img src="src/img/news photo.png" alt="">
+                        </div>
+                        <div class="news-title">
+                            <h3>Заголовок</h3>
+                            <a class="nav-link" href="news.php">Читать &#8594;</a>
+                        </div>
+                    </a>
+                </div>
+                <div class="news-item">
+                    <a class="news-item-inner" href="">
+                        <div class="news-img">
+                            <img src="src/img/news photo.png" alt="">
+                        </div>
+                        <div class="news-title">
+                            <h3>Заголовок</h3>
+                            <a class="nav-link" href="news.php">Читать &#8594;</a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="news-row">
+                <div class="news-item">
+                    <a class="news-item-inner" href="">
+                        <div class="news-img">
+                            <img src="src/img/news photo.png" alt="">
+                        </div>
+                        <div class="news-title">
+                            <h3>Заголовок</h3>
+                            <a class="nav-link" href="news.php">Читать &#8594;</a>
+                        </div>
+                    </a>
+                </div>
+                <div class="news-item">
+                    <a class="news-item-inner" href="">
+                        <div class="news-img">
+                            <img src="src/img/news photo.png" alt="">
+                        </div>
+                        <div class="news-title">
+                            <h3>Заголовок<span class="news-important">Важно</span></h3>
+                            <a class="nav-link" href="news.php">Читать &#8594;</a>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>       

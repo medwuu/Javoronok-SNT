@@ -1,0 +1,32 @@
+.spoiler-title a {
+    color: var(--white);
+}
+
+.spoiler-text-link {
+    display: block;
+    font-size: 47px;
+    border-bottom: 5px solid var(--gray);
+    padding: 15px 0;
+}
+.spoiler-text-link:last-child {
+    border-bottom: 0;
+}
+
+.archive-button {
+    width: 100%;
+    text-align: center;
+    margin-top: calc(22px + 35px);
+}
+
+.archive-link {
+    padding: 22px 60px;
+    border-radius: 50px;
+    font-size: 47px;
+    color: var(--white);
+    background-color: var(--black);
+    transition: all .2s linear;
+}
+.archive-link:hover {
+    color: var(--black);
+    background-color: var(--active-btn);
+}

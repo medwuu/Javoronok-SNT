@@ -1,0 +1,75 @@
+.main {
+    display: block;
+}
+
+.section-title {
+    width: 100%;
+}
+
+.spoiler {
+    width: 83%;
+    margin: 75px auto 0;
+}
+
+.spoiler-item {
+    margin-bottom: 30px;
+    color: var(--white);
+    text-align-last: left;
+}
+.spoiler-item:last-child {
+    margin-bottom: 0;
+}
+
+.spoiler-title {
+    margin: 0;
+    padding: 22px 0 22px 64px;
+    background-color: var(--dark-red);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+}
+.spoiler-title.arrow::before {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: var(--white);
+    top: 55px;
+    left: 10px;
+    transform: rotate(45deg);
+    transition: all .2s linear;
+}
+.spoiler-title.arrow::after {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: var(--white);
+    top: 55px;
+    left: 29px;
+    transform: rotate(-45deg);
+    transition: all .2s linear;
+}
+.spoiler-title.active::before {
+    transform: rotate(-45deg);
+    transition: all .2s linear;
+}
+.spoiler-title.active::after {
+    transform: rotate(45deg);
+    transition: all .2s linear;
+}
+
+.spoiler-text {
+    background-color: var(--dark-red);
+    border-radius: 50px;
+    font-size: 20px;
+    padding: 30px 64px 20px;
+    display: none;
+}
+
+.spoiler-text a {
+    color: blue;
+}
+.spoiler-text a:hover {
+    text-decoration: underline;
+}

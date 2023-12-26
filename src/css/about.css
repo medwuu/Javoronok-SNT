@@ -1,0 +1,21 @@
+.main {
+    display: block;
+}
+
+.section-subtitle {
+    font-size: 38px;
+    font-weight: 400;
+    width: 83%;
+    text-align: center;
+    margin: 30px auto 80px;
+}
+
+.main-text p, ul, li {
+    font-size: 29px;
+    font-weight: 100;
+    text-align: justify;
+}
+
+hr {
+    margin: 15px 0;
+}

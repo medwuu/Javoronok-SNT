@@ -35,26 +35,27 @@
     <main class="main container">
         <h3 class="section-title">Новости СНТ:</h3>
         <div class="news-container">
+            <!-- TODO: придумать, как забирать данные из БД. сделать ссылки -->
             <div class="news-row">
                 <div class="news-item">
-                    <a class="news-item-inner" href="">
+                    <a class="news-item-inner" href="news/news_example.php">
                         <div class="news-img">
                             <img src="src/img/news photo.png" alt="">
                         </div>
                         <div class="news-title">
                             <h3>Заголовок<span class="news-important">Важно</span></h3>
-                            <a class="nav-link" href="news.php">Читать &#8594;</a>
+                            <a class="nav-link" href="news/news_example.php">Читать &#8594;</a>
                         </div>
                     </a>
                 </div>
                 <div class="news-item">
-                    <a class="news-item-inner" href="">
+                    <a class="news-item-inner" href="news/news_example.php">
                         <div class="news-img">
                             <img src="src/img/news photo.png" alt="">
                         </div>
                         <div class="news-title">
                             <h3>Заголовок</h3>
-                            <a class="nav-link" href="news.php">Читать &#8594;</a>
+                            <a class="nav-link" href="news/news_example.php">Читать &#8594;</a>
                         </div>
                     </a>
                 </div>
@@ -62,24 +63,24 @@
             <hr>
             <div class="news-row">
                 <div class="news-item">
-                    <a class="news-item-inner" href="">
+                    <a class="news-item-inner" href="news/news_example.php">
                         <div class="news-img">
                             <img src="src/img/news photo.png" alt="">
                         </div>
                         <div class="news-title">
                             <h3>Заголовок</h3>
-                            <a class="nav-link" href="news.php">Читать &#8594;</a>
+                            <a class="nav-link" href="news/news_example.php">Читать &#8594;</a>
                         </div>
                     </a>
                 </div>
                 <div class="news-item">
-                    <a class="news-item-inner" href="">
+                    <a class="news-item-inner" href="news/news_example.php">
                         <div class="news-img">
                             <img src="src/img/news photo.png" alt="">
                         </div>
                         <div class="news-title">
                             <h3>Заголовок</h3>
-                            <a class="nav-link" href="news.php">Читать &#8594;</a>
+                            <a class="nav-link" href="news/news_example.php">Читать &#8594;</a>
                         </div>
                     </a>
                 </div>
@@ -87,24 +88,24 @@
             <hr>
             <div class="news-row">
                 <div class="news-item">
-                    <a class="news-item-inner" href="">
+                    <a class="news-item-inner" href="news/news_example.php">
                         <div class="news-img">
                             <img src="src/img/news photo.png" alt="">
                         </div>
                         <div class="news-title">
                             <h3>Заголовок</h3>
-                            <a class="nav-link" href="news.php">Читать &#8594;</a>
+                            <a class="nav-link" href="news/news_example.php">Читать &#8594;</a>
                         </div>
                     </a>
                 </div>
                 <div class="news-item">
-                    <a class="news-item-inner" href="">
+                    <a class="news-item-inner" href="news/news_example.php">
                         <div class="news-img">
                             <img src="src/img/news photo.png" alt="">
                         </div>
                         <div class="news-title">
                             <h3>Заголовок<span class="news-important">Важно</span></h3>
-                            <a class="nav-link" href="news.php">Читать &#8594;</a>
+                            <a class="nav-link" href="news/news_example.php">Читать &#8594;</a>
                         </div>
                     </a>
                 </div>
@@ -136,7 +137,7 @@
             </nav>
             <address class="footer-address">
                 <p>141822, Российская Федерация, Московская область, Дмитровский городской округ, территория объединения "Жаворонок"</p>
-                <a href="" class="footer-map-link">
+                <a href="https://yandex.com/maps/geo/sadovodcheskoye_nekommercheskoye_tovarishchestvo_zhavoronok/53203668/" class="footer-map-link">
                     Смотреть на картах
                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
                         <path opacity="1" fill="#ff3234" d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>

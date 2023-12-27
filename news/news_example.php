@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="stylesheet" href="src/css/management.css">
-    <link rel="stylesheet" href="src/css/documents.css">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../src/css/news_example.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
-    <title>Документы</title>
+    <title>Новости СНТ</title>
 </head>
 <body>
     <header class="header container">
-        <a class="logo" href="index.php">
+        <a class="logo" href="../index.php">
             <div class="logo-photo">
-                <img src="src/img/logo.png" alt="">
+                <img src="../src/img/logo.png" alt="">
             </div>
             <h1 class="logo-name">
                 СНТ
@@ -24,77 +23,36 @@
             </h1>
         </a>
         <nav class="navigation">
-            <a class="nav-link" href="about.php">О СНТ</a>
-            <a class="nav-link" href="news.php">Новости</a>
-            <a class="nav-link" href="management.php">Органы управления</a>
-            <a class="nav-link nav-link-active" href="documents.php">Документы</a>
-            <a class="nav-link" href="members.php">Членам СНТ</a>
-            <a class="nav-link" href="contacts.php">Контакты</a>
+            <a class="nav-link" href="../about.php">О СНТ</a>
+            <a class="nav-link" href="../news.php">Новости</a>
+            <a class="nav-link" href="../management.php">Органы управления</a>
+            <a class="nav-link" href="../documents.php">Документы</a>
+            <a class="nav-link" href="../members.php">Членам СНТ</a>
+            <a class="nav-link" href="../contacts.php">Контакты</a>
         </nav>
     </header>
 
-    <main class="main container">
-        <h3 class="section-title">Документы</h3>
-        <hr>
-        <div class="spoiler">
-            <div class="spoiler-item">
-                <h3 class="spoiler-title section-title">
-                    <!-- TODO: добавить ссылки к этому и подобным элементам снизу -->
-                    <a href="">Финансово-экономическое обоснование</a>
-                </h3>
-            </div>
-            <div class="spoiler-item">
-                <h3 class="spoiler-title section-title">
-                    <a href="">Приходно-расходная смета</a>
-                </h3>
-            </div>
-            <div class="spoiler-item">
-                <h3 class="spoiler-title section-title">
-                    <a href="">Отчёт об исполнении приходно-расходной сметы</a>
-                </h3>
-            </div>
-
-            <div class="spoiler-item">
-                <h3 class="spoiler-title section-title arrow">Внутренние регламентные документы</h3>
-                <p class="spoiler-text">
-                    <a class="spoiler-text-link" href="">Устав</a>
-                    <a class="spoiler-text-link" href="">Правила внутреннего распорядка</a>
-                    <a class="spoiler-text-link" href="">Положение об энергоснабжении</a>
-                    <a class="spoiler-text-link" href="">Положение о ревизионной комиссии</a>
-                    <a class="spoiler-text-link" href="">Типовой договор о пользовании имуществом общего пользования</a>
-                    <a class="spoiler-text-link" href="">Должностная инструкция дежурного сторожа СНТ</a>
-                </p>
-            </div>
-
-            <div class="spoiler-item">
-                <h3 class="spoiler-title section-title">
-                    <a href="">Глава 9.1 ГК РФ</a>
-                </h3>
-            </div>
-            <div class="spoiler-item">
-                <h3 class="spoiler-title section-title">
-                    <a href="">Федеральный закон 66-ФЗ</a>
-                </h3>
-            </div>
-            <div class="spoiler-item">
-                <h3 class="spoiler-title section-title">
-                    <a href="">Федеральный закон 217-ФЗ</a>
-                </h3>
-            </div>
-            <div class="spoiler-item">
-                <h3 class="spoiler-title section-title">
-                    <a href="">Решения общих собраний</a>
-                </h3>
-            </div>
-            <div class="spoiler-item">
-                <h3 class="spoiler-title section-title">
-                    <a href="">Договор на вывоз мусора</a>
-                </h3>
-            </div>
+    <main class="main container small-container">
+        <div class="back-btn">
+            <a class="nav-link" href="../news.php">&#8592; Назад</a>
         </div>
-        <div class="archive-button">
-            <!-- TODO: добавить ссылку -->
-            <a class="archive-link" href="">Архив</a>
+        <h2 class="news-title">Отчёт председателя праления за июль 2023 года</h2>
+        <hr>
+        <div class="news-note-img">
+            <img src="../src/img/news example.png" alt="">
+        </div>
+        <div class="news-note-text">
+        <p>Уважаемые садоводы!</p>
+        <p>Ознакомиться с отчетом Председателя Правления можно <a class="news-note-link" href="">здесь.</a></p>
+        
+        <p><b>Из главного:</b></p>
+        <ul>
+            <li>Новый устав товарищества скоро будет опубликован</li>
+            <li>продолжает действовать постановление Губернатора Московской области  Ю. Воробьева «О введении режима повышенной готовности на территории Московской области»</li>
+            <li>Правление СНТ под роспись раздает садоводам Сборник материалов о деятельности за отчетный период</li>
+            <li>работы с 01 июля 2022 года по 30 июня 2023 года, включительно.</li>
+            <li>и многое другое...</li>
+        </ul>
         </div>
     </main>
 
@@ -102,22 +60,22 @@
         <div class="footer-inner container">
             <nav class="footer-nav">
                 <div class="footer-nav-item">
-                    <a class="footer-nav-link" href="about.php">О СНТ</a>
+                    <a class="footer-nav-link" href="../about.php">О СНТ</a>
                 </div>
                 <div class="footer-nav-item">
-                    <a class="footer-nav-link" href="news.php">Новости</a>
+                    <a class="footer-nav-link" href="../news.php">Новости</a>
                 </div>
                 <div class="footer-nav-item">
-                    <a class="footer-nav-link" href="management.php">Органы управления</a>
+                    <a class="footer-nav-link" href="../management.php">Органы управления</a>
                 </div>
                 <div class="footer-nav-item">
-                    <a class="footer-nav-link footer-nav-link-active" href="documents.php">Документы</a>
+                    <a class="footer-nav-link" href="../documents.php">Документы</a>
                 </div>
                 <div class="footer-nav-item">
-                    <a class="footer-nav-link" href="members.php">Членам СНТ</a>
+                    <a class="footer-nav-link" href="../members.php">Членам СНТ</a>
                 </div>
                 <div class="footer-nav-item">
-                    <a class="footer-nav-link" href="contacts.php">Контакты</a>
+                    <a class="footer-nav-link" href="../contacts.php">Контакты</a>
                 </div>
             </nav>
             <address class="footer-address">
@@ -171,8 +129,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="src/js/spoiler.js"></script>
 </body>
 </html>

@@ -39,7 +39,7 @@
             <h2 class="section-title">Новости:</h2>
             <div class="news-container">
                 <!-- Новость 1 -->
-                <a class="news-block" href="">
+                <a class="news-block" href="news/news_example.php">
                     <div class="news-img">
                         <img src="src/img/news photo.png" alt="">
                     </div>
@@ -55,7 +55,7 @@
                 </a>
                 <hr>
                 <!-- Новость 2 -->
-                <a class="news-block" href="">
+                <a class="news-block" href="news/news_example.php">
                     <div class="news-content-even">
                         <div class="news-title">
                             <h3>Заголовок</h3>
@@ -70,7 +70,7 @@
                 </a>
                 <hr>
                 <!-- Новость 3 -->
-                <a class="news-block" href="">
+                <a class="news-block" href="news/news_example.php">
                     <div class="news-img">
                         <img src="src/img/news photo.png" alt="">
                     </div>
@@ -85,7 +85,7 @@
                 </a>
                 <hr>
                 <!-- Новость 4 -->
-                <a class="news-block" href="">
+                <a class="news-block" href="news/news_example.php">
                     <div class="news-content-even">
                         <div class="news-title">
                             <h3>Заголовок</h3>
@@ -210,7 +210,7 @@
             </nav>
             <address class="footer-address">
                 <p>141822, Российская Федерация, Московская область, Дмитровский городской округ, территория объединения "Жаворонок"</p>
-                <a href="" class="footer-map-link">
+                <a href="https://yandex.com/maps/geo/sadovodcheskoye_nekommercheskoye_tovarishchestvo_zhavoronok/53203668/" class="footer-map-link">
                     Смотреть на картах
                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
                         <path opacity="1" fill="#ff3234" d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>

@@ -7,9 +7,16 @@
     font-size: 47px;
     border-bottom: 5px solid var(--gray);
     padding: 15px 0;
+    transition: all .2s linear;
 }
 .spoiler-text-link:last-child {
     border-bottom: 0;
+}
+.spoiler-text-link::after {
+    content: " →";
+}
+.spoiler-text-link:hover {
+    padding-left: 20px;
 }
 
 .archive-button {

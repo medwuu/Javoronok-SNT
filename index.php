@@ -108,34 +108,34 @@
             <div class="weather">
                 <!-- TODO для дебага -->
                 <!-- <img src="src/img/weather.png" alt=""> -->
-                <div id="gsInformerID-uJA1452Ds36qNf" class="gsInformer" style="width:545px;height:232px">
-                    <div class="gsIContent">
-                        <div id="cityLink">
-                            <a href="https://www.gismeteo.ru/weather-moscow-4368/" target="_blank" title="Погода в Москве">
-                                <img src="https://nst1.gismeteo.ru/assets/flat-ui/img/gisloader.svg" width="24" height="24" alt="Погода в Москве">
-                            </a>
-                            </div>
-                        <div class="gsLinks">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <div class="leftCol">
-                                            <a href="https://www.gismeteo.ru/" target="_blank" title="Погода">
-                                                <img alt="Погода" src="https://nst1.gismeteo.ru/assets/flat-ui/img/logo-mini2.png" align="middle" border="0" width="11" height="16" />
-                                                <img src="https://nst1.gismeteo.ru/assets/flat-ui/img/informer/gismeteo.svg" border="0" align="middle" style="left: 5px; top:1px">
-                                            </a>
-                                            </div>
-                                            <div class="rightCol">
-                                                <a href="https://www.gismeteo.ru/weather-moscow-4368/2-weeks/" target="_blank" title="Погода в Москве на 2 недели">
-                                                    <img src="https://nst1.gismeteo.ru/assets/flat-ui/img/informer/forecast-2weeks.ru.svg" border="0" align="middle" style="top:auto" alt="Погода в Москве на 2 недели">
-                                                </a>
-                                            </div>
-                                        </td>
-                                </tr>
-                            </table>
+                <div id="gsInformerID-cPp06jCChpBd6V" class="gsInformer" style="width:545px;height:232px">
+                <div class="gsIContent">
+                    <div id="cityLink">
+                        <a href="https://www.gismeteo.ru/weather-moscow-4368/" target="_blank" title="Погода в Москве">
+                            <img src="https://nst1.gismeteo.ru/assets/flat-ui/img/gisloader.svg" width="24" height="24" alt="Погода в Москве">
+                        </a>
                         </div>
+                    <div class="gsLinks">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="leftCol">
+                                        <a href="https://www.gismeteo.ru/" target="_blank" title="Погода">
+                                            <img alt="Погода" src="https://nst1.gismeteo.ru/assets/flat-ui/img/logo-mini2.png" align="middle" border="0" width="11" height="16" />
+                                            <img src="https://nst1.gismeteo.ru/assets/flat-ui/img/informer/gismeteo.svg" border="0" align="middle" style="left: 5px; top:1px">
+                                        </a>
+                                        </div>
+                                        <div class="rightCol">
+                                            <a href="https://www.gismeteo.ru/weather-moscow-4368/2-weeks/" target="_blank" title="Погода в Москве на 2 недели">
+                                                <img src="https://nst1.gismeteo.ru/assets/flat-ui/img/informer/forecast-2weeks.ru.svg" border="0" align="middle" style="top:auto" alt="Погода в Москве на 2 недели">
+                                            </a>
+                                        </div>
+                                    </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
+            </div>
             </div>
             <div class="map">
                 <div class="map-text">Мы на карте:</div>
@@ -259,6 +259,6 @@
             </div>
         </div>
     </footer>
-    <script async src="https://www.gismeteo.ru/api/informer/getinformer/?hash=uJA1452Ds36qNf"></script>
+    <script async src="https://www.gismeteo.ru/api/informer/getinformer/?hash=cPp06jCChpBd6V"></script>
 </body>
 </html>

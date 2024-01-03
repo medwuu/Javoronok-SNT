@@ -36,24 +36,33 @@
         <div class="back-btn">
             <a class="nav-link" href="../news.php">&#8592; Назад</a>
         </div>
-        <h2 class="news-title">Отчёт председателя праления за июль 2023 года</h2>
-        <hr>
-        <div class="news-note-img">
-            <img src="../src/img/news example.png" alt="">
-        </div>
-        <div class="news-note-text">
-        <p>Уважаемые садоводы!</p>
-        <p>Ознакомиться с отчетом Председателя Правления можно <a class="news-note-link" href="">здесь.</a></p>
-        
-        <p><b>Из главного:</b></p>
-        <ul>
-            <li>Новый устав товарищества скоро будет опубликован</li>
-            <li>продолжает действовать постановление Губернатора Московской области  Ю. Воробьева «О введении режима повышенной готовности на территории Московской области»</li>
-            <li>Правление СНТ под роспись раздает садоводам Сборник материалов о деятельности за отчетный период</li>
-            <li>работы с 01 июля 2022 года по 30 июня 2023 года, включительно.</li>
-            <li>и многое другое...</li>
-        </ul>
-        </div>
+        <?php
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "news";
+
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            $sql = "SELECT * FROM `news` WHERE id = 1";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+
+            echo '<h2 class="news-title">' . $row['title'] . '</h2>';
+            echo '<hr>';
+            if ($row['img']) {
+                echo '<div class="news-note-img">
+                        <img src="' . $row['img'] . '"" alt="">
+                      </div>';
+            }
+
+            // IMPORTANT: https://text-html.com/
+            if ($row['text']) {
+                echo '<div class="news-note-text">'. $row['text'] . '</div>';
+            }
+            
+            $conn->close();
+        ?>
     </main>
 
     <footer class="footer">

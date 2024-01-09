@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- TODO: решить судьбу капчи -->
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
     <!-- TODO: сгенерировать заново с доменом релиза (https://www.gismeteo.ru/informers/constructor/) -->
     <link rel="stylesheet" type="text/css" href="https://nst1.gismeteo.ru/assets/flat-ui/legacy/css/informer.min.css">
     <title>СНТ Жаворонок</title>
@@ -108,34 +109,34 @@
             <div class="weather">
                 <!-- TODO для дебага -->
                 <!-- <img src="src/img/weather.png" alt=""> -->
-                <div id="gsInformerID-cPp06jCChpBd6V" class="gsInformer" style="width:545px;height:232px">
-                <div class="gsIContent">
-                    <div id="cityLink">
-                        <a href="https://www.gismeteo.ru/weather-moscow-4368/" target="_blank" title="Погода в Москве">
-                            <img src="https://nst1.gismeteo.ru/assets/flat-ui/img/gisloader.svg" width="24" height="24" alt="Погода в Москве">
-                        </a>
-                        </div>
-                    <div class="gsLinks">
-                        <table>
-                            <tr>
-                                <td>
-                                    <div class="leftCol">
-                                        <a href="https://www.gismeteo.ru/" target="_blank" title="Погода">
-                                            <img alt="Погода" src="https://nst1.gismeteo.ru/assets/flat-ui/img/logo-mini2.png" align="middle" border="0" width="11" height="16" />
-                                            <img src="https://nst1.gismeteo.ru/assets/flat-ui/img/informer/gismeteo.svg" border="0" align="middle" style="left: 5px; top:1px">
-                                        </a>
-                                        </div>
-                                        <div class="rightCol">
-                                            <a href="https://www.gismeteo.ru/weather-moscow-4368/2-weeks/" target="_blank" title="Погода в Москве на 2 недели">
-                                                <img src="https://nst1.gismeteo.ru/assets/flat-ui/img/informer/forecast-2weeks.ru.svg" border="0" align="middle" style="top:auto" alt="Погода в Москве на 2 недели">
+                <div id="gsInformerID-SonQbTcv0P541P" class="gsInformer" style="width:560px;height:232px">
+                    <div class="gsIContent">
+                        <div id="cityLink">
+                            <a href="https://www.gismeteo.ru/weather-moscow-4368/" target="_blank" title="Погода в Москве">
+                                <img src="https://nst1.gismeteo.ru/assets/flat-ui/img/gisloader.svg" width="24" height="24" alt="Погода в Москве">
+                            </a>
+                            </div>
+                        <div class="gsLinks">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div class="leftCol">
+                                            <a href="https://www.gismeteo.ru/" target="_blank" title="Погода">
+                                                <img alt="Погода" src="https://nst1.gismeteo.ru/assets/flat-ui/img/logo-mini2.png" align="middle" border="0" width="11" height="16" />
+                                                <img src="https://nst1.gismeteo.ru/assets/flat-ui/img/informer/gismeteo.svg" border="0" align="middle" style="left: 5px; top:1px">
                                             </a>
-                                        </div>
-                                    </td>
-                            </tr>
-                        </table>
+                                            </div>
+                                            <div class="rightCol">
+                                                <a href="https://www.gismeteo.ru/weather-moscow-4368/2-weeks/" target="_blank" title="Погода в Москве на 2 недели">
+                                                    <img src="https://nst1.gismeteo.ru/assets/flat-ui/img/informer/forecast-2weeks.ru.svg" border="0" align="middle" style="top:auto" alt="Погода в Москве на 2 недели">
+                                                </a>
+                                            </div>
+                                        </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
             <div class="map">
                 <div class="map-text">Мы на карте:</div>
@@ -147,7 +148,7 @@
                 </div>
             </div>
             <div class="write-to-governance">
-                <form action="form.php" method="post">
+                <form action="src/additional/form.php" id="ajax-form" method="POST">
                     <legend>Написать в правление</legend>
                     <div class="form-group">
                         <label class="form-label" for="">Тема<span class="form-necessary">*</span>:</label>
@@ -179,8 +180,10 @@
                         <br>
                         <input class="form-input form-file" type="file" name="file">
                     </div>
+                    <div class="form-group form-result" id="form-result"></div>
+                    <!-- TODO: добавить или убрать капчу -->
                     <!-- <div class="g-recaptcha" data-sitekey="6Le2wB8pAAAAAPxlHWE-LBxbwbTrqZ-QFg-qgrP8"></div> -->
-                    <button class="submit-btn" type="submit" name="send">Отправить</button>
+                    <button class="submit-btn" id="submit-btn" type="" name="send">Отправить</button>
                 </form>
             </div>
         </div>
@@ -259,6 +262,8 @@
             </div>
         </div>
     </footer>
-    <script async src="https://www.gismeteo.ru/api/informer/getinformer/?hash=cPp06jCChpBd6V"></script>
+    <script async src="https://www.gismeteo.ru/api/informer/getinformer/?hash=SonQbTcv0P541P"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="src/additional/form.js"></script>
 </body>
 </html>

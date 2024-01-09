@@ -144,11 +144,11 @@
                 <p class="spoiler-text">
                     <a class="spoiler-text-link" href="">Как правильно выбрать огнетушитель</a>
                     <a class="spoiler-text-link" href="">Приказ МЧС от 30.11.2016 г N644</a>
-                    <a class="spoiler-text-link" href="">Постановление Правительства N807 от 18.08.16 г.</a>
-                    <a class="spoiler-text-link" href="">Постановление Правительства РФ N390 от 25.04.12 г.</</a>
-                    <a class="spoiler-text-link" href="">Федеральный закон от 22.07.2008 г. N123-ФЗ</a>
-                    <a class="spoiler-text-link" href="">Федеральный закон от 23.06.2016 г. N 218-ФЗ</a>
-                    <a class="spoiler-text-link" href="">Свод правил N53</a>
+                    <a class="spoiler-text-link" href="">Постановление Правительства №807 от 18.08.16 г.</a>
+                    <a class="spoiler-text-link" href="">Постановление Правительства РФ №390 от 25.04.12 г.</</a>
+                    <a class="spoiler-text-link" href="">Федеральный закон от 22.07.2008 г. №123-ФЗ</a>
+                    <a class="spoiler-text-link" href="">Федеральный закон от 23.06.2016 г. №218-ФЗ</a>
+                    <a class="spoiler-text-link" href="">Свод правил №53</a>
                     <a class="spoiler-text-link" href="">СП53 в редакции 2020 года</a>
                 </p>
             </div>

@@ -109,7 +109,7 @@
             <div class="weather">
                 <!-- TODO для дебага -->
                 <!-- <img src="src/img/weather.png" alt=""> -->
-                <div id="gsInformerID-SonQbTcv0P541P" class="gsInformer" style="width:560px;height:232px">
+                <?php echo '<div id="gsInformerID-' . parse_ini_file('.env')['GISMETEO_TOKEN'] . '" class="gsInformer" style="width:560px;height:232px">'; ?>
                     <div class="gsIContent">
                         <div id="cityLink">
                             <a href="https://www.gismeteo.ru/weather-moscow-4368/" target="_blank" title="Погода в Москве">
@@ -262,7 +262,7 @@
             </div>
         </div>
     </footer>
-    <script async src="https://www.gismeteo.ru/api/informer/getinformer/?hash=SonQbTcv0P541P"></script>
+    <?php echo '<script async src="https://www.gismeteo.ru/api/informer/getinformer/?hash=' . parse_ini_file('.env')['GISMETEO_TOKEN'] . '"></script>'; ?>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="src/additional/form.js"></script>
 </body>

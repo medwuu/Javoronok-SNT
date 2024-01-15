@@ -90,7 +90,7 @@
             <div class="weather">
                 <!-- TODO для дебага -->
                 <!-- <img src="src/img/weather.png" alt=""> -->
-                <?php echo '<div id="gsInformerID-' . parse_ini_file('.env')['GISMETEO_TOKEN'] . '" class="gsInformer" style="width:560px;height:232px">'; ?>
+                <div id="gsInformerID-<?php echo parse_ini_file('.env')['GISMETEO_TOKEN']; ?>" class="gsInformer" style="width:560px;height:232px">
                     <div class="gsIContent">
                         <div id="cityLink">
                             <a href="https://www.gismeteo.ru/weather-moscow-4368/" target="_blank" title="Погода в Москве">
@@ -129,7 +129,7 @@
                 </div>
             </div>
             <div class="write-to-governance">
-                <form action="src/additional/form.php" id="ajax-form" method="POST">
+                <form action="src/additional/form.php" id="ajax-form" method="POST" enctype="multipart/form-data">
                     <legend>Написать в правление</legend>
                     <div class="form-group">
                         <label class="form-label" for="">Тема<span class="form-necessary">*</span>:</label>
@@ -157,13 +157,13 @@
                         <textarea class="form-input form-message" type="text" name="message"></textarea>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="">Прикрепить файл:</label>
+                        <label class="form-label" for="">Прикрепить файл (до <?php echo parse_ini_file('.env')['MAX_FILE_SIZE'] ?>МБ):</label>
                         <br>
-                        <input class="form-input form-file" type="file" name="file">
+                        <input class="form-input form-file" id="user-file" type="file" name="user-file">
                     </div>
+                    <!-- TODO: решить судьбу капчи -->
+                    <!-- <div class="g-recaptcha" data-sitekey="<?php echo parse_ini_file('.env')['RECAPTCHA_TOKEN']; ?>"></div> -->
                     <div class="form-group form-result" id="form-result"></div>
-                    <!-- TODO: добавить или убрать капчу -->
-                    <!-- <div class="g-recaptcha" data-sitekey="6Le2wB8pAAAAAPxlHWE-LBxbwbTrqZ-QFg-qgrP8"></div> -->
                     <button class="submit-btn" id="submit-btn" type="" name="send">Отправить</button>
                 </form>
             </div>
@@ -171,7 +171,7 @@
     </main>
 
     <?php include('src/components/footer.php'); ?>
-    <?php echo '<script async src="https://www.gismeteo.ru/api/informer/getinformer/?hash=' . parse_ini_file('.env')['GISMETEO_TOKEN'] . '"></script>'; ?>
+    <script async src="https://www.gismeteo.ru/api/informer/getinformer/?hash=<?php echo parse_ini_file('.env')['GISMETEO_TOKEN']; ?>"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="src/additional/form.js"></script>
 </body>

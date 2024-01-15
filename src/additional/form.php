@@ -1,11 +1,15 @@
 <?php
     $env = parse_ini_file('../../.env'); // инициализация .env файла
+    require_once('../../vendor/autoload.php');
+    use PHPMailer\PHPMailer\PHPMailer;
+    $mail = new PHPMailer();
+    $mail->CharSet = 'UTF-8';
+
     $subject = $_POST['theme'];
     $email = $_POST['email'];
     $land_number = $_POST['land_number'];
     $telephone = $_POST['telephone'];
     $user_message = $_POST['message'];
-    // TODO: обработка файла
     
 
     $error = '';
@@ -18,16 +22,31 @@
     else if (!trim($user_message)) {
         $error = 'Ошибка! Введите сообщение';
     }
+    else if ($_FILES['user-file']['size'] > (int)$env['MAX_FILE_SIZE'] * 1024 * 1024) {
+        $error = 'Ошибка, размер файла более ' . $env['MAX_FILE_SIZE'] . ' МБ';
+    }
 
     if ($error) {
         echo "<span style=\"color: var(--dark-red)\">" . $error . "</span>";
         exit(1);
     }
     
-    $send_to = $env['MAIL_TO'];
-    $subject = "=?utf-8?B?".base64_encode($subject)."?="; // структура, не поддающаяся объяснению. без неё не работает
-    
-    // формирую текст сообщения, используя html теги
+
+    // при использовании OpenServer, это не надо
+    if (!$env['DEBUG']) {
+        $mail->isSMTP();
+        $mail->Host = $env['SMTP_HOST'];
+        $mail->Port = (int)$env['SMTP_PORT'];
+        $mail->SMTPAuth = true;
+        $mail->Username = $env['USERNAME'];
+        $mail->Password = $env['PASSWORD'];
+        $mail->SMTPSecure = $env['SMTP_SECURE'];
+    }
+    $mail->setFrom($email);
+    $mail->addAddress($env['MAIL_TO']);
+    $mail->isHTML(true);
+
+    $mail->Subject = $subject;
     $message = "<b>От:</b> <i>$email</i>, ";
     if (trim($telephone)) {
         $message .= "<i><a href=\"$telephone\">$telephone</a></i>";
@@ -43,9 +62,13 @@
         $message .= "не указан";
     }
     $message .= "<br><hr><br>" . $user_message;
-    $headers = "From: $email\r\nReply-to: $email\r\nContent-type: text/html;charset=utf-8\r\n";
+    $mail->Body = $message;
     
-    if (mail($send_to, $subject, $message, $headers)) {
+    if ($_FILES['user-file']) {
+        $mail->addAttachment($_FILES['user-file']['tmp_name'], $_FILES['user-file']['name']);
+    }
+    
+    if ($mail->send()) {
         echo "<span style=\"color: green\">Ваше сообщение успешно отправлено!</span>";
         exit(0);
     }

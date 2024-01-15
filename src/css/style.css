@@ -213,6 +213,7 @@ hr {
 
 .form-input {
     width: 100%;
+    max-width: 560px;
     height: 50px;
     background-color: var(--gray);
     border: 0;

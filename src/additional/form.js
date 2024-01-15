@@ -2,26 +2,33 @@ $(document).ready(function() {
     // событие на клик по #submit-btn
     $("#submit-btn").click(
         function() {
-            sendAjaxForm("ajax-form", "src/additional/form.php");
+            $("#form-result").html("Отправка письма...");
+            // упаковывем все инпуты из формы
+            var formData = new FormData($('#ajax-form')[0]);
+            sendAjaxForm(formData, "src/additional/form.php");
             return false;
         }
     );
 });
 
-function sendAjaxForm(ajax_form, url) {
+function sendAjaxForm(formData, url) {
     $.ajax({
         url: url,
         type: "POST",
-        dataType: "html",
-        data: $("#"+ajax_form).serialize(),  // упаковывем все инпуты из формы
+        data: formData,
         success: function(response) {
-            $('#ajax-form')[0].reset();  // очистка формы при коде 200
+            // очистка формы при коде 200
+            $('#ajax-form')[0].reset();
             $("#form-result").html(response);
         },
 
-        // FIXME: не выполняется. реализовать вывод ошибки здесь
+        // выполняется только при ошибке подключения по SMTP
         error: function(response) {
             $("#form-result").html("Произошла непредвиденная ошибка!");
-        }
+        },
+        cache: false,
+        contentType: false,
+        processData: false,
+        mimeType: "multipart/form-data"
     });
 }

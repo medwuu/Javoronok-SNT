@@ -42,10 +42,10 @@
                     <br>
                     <?php
                         $env = parse_ini_file('.env');
-                        $servername = $env['servername'];
-                        $username = $env['username'];
-                        $password = $env['password'];
-                        $dbname = $env['dbname'];
+                        $servername = $env['db_servername'];
+                        $username = $env['db_username'];
+                        $password = $env['db_password'];
+                        $dbname = 'debtors';
 
                         $conn = new mysqli($servername, $username, $password, $dbname);
 

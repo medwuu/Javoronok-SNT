@@ -21,13 +21,12 @@
             <h2 class="section-title">Новости:</h2>
             <div class="news-container">
                 <!-- Новость 1 -->
-                <a class="news-block" href="news/news_example.php">
+                                <a class="news-block" href="news/news_example.php">
                     <div class="news-img">
                         <img src="src/img/news photo.png" alt="">
                     </div>
                     <div class="news-content-odd">
                         <div class="news-title">
-                            <!-- TODO: нужна важная новость – дописывать span -->
                             <h3>Заголовок<span class="news-important">Важно</span></h3>
                         </div>
                         <div class="news-short">
@@ -129,7 +128,7 @@
                 </div>
             </div>
             <div class="write-to-governance">
-                <form action="src/additional/form.php" id="ajax-form" method="POST" enctype="multipart/form-data">
+                <form action="src/additional/form.php" id="ajax-form" method="POST" enctype="multipart/form-data" autocomplete="<?php echo parse_ini_file('.env')['DEBUG'] ? 'on' : 'off'; ?>">
                     <legend>Написать в правление</legend>
                     <div class="form-group">
                         <label class="form-label" for="">Тема<span class="form-necessary">*</span>:</label>

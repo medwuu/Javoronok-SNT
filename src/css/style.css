@@ -130,16 +130,17 @@ hr {
 }
 
 .news-img img {
-    max-width: 547px;
-    max-height: 307px;
+    width: 547px;
+    height: 307px;
+    object-fit: cover;
 }
 
 .news-content-odd{
     margin: 0 0 0 20px;
-}
+    }
 .news-content-even{
     margin: 0 20px 0 0;
-}
+    }
 
 .news-title {
     display: flex;
@@ -162,7 +163,7 @@ hr {
     line-height: 1.6em;
     text-align: justify;
     max-height: 243px;
-}
+    }
 
 .all-news {
     width: 100%;

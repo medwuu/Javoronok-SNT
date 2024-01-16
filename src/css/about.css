@@ -10,6 +10,13 @@
     margin: 30px auto 80px;
 }
 
+.panorama-img {
+    text-align: center;
+}
+.panorama-img img {
+    max-width: 100%;
+}
+
 .main-text p, ul, li {
     font-size: 29px;
     font-weight: 100;

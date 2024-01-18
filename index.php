@@ -21,64 +21,37 @@
             <h2 class="section-title">Новости:</h2>
             <div class="news-container">
                 <!-- Новость 1 -->
-                                <a class="news-block" href="news/news_example.php">
-                    <div class="news-img">
-                        <img src="src/img/news photo.png" alt="">
-                    </div>
-                    <div class="news-content-odd">
-                        <div class="news-title">
-                            <h3>Заголовок<span class="news-important">Важно</span></h3>
-                        </div>
-                        <div class="news-short">
-                            <p>Aliquam totam tenetur fugit maiores. Aliquam qui minus suscipit ut rerum distinctio fuga veritatis. Dolorum cupiditate architecto rem iusto eligendi aperiam. Aliquam totam tenetur. Aliquam totam tenetur fugit maiores. Aliquam qui minus suscipit ut rerum distinctio fuga veritatis. Dolorum cupiditate architecto rem...</p>
-                        </div>
-                    </div>
-                </a>
-                <hr>
-                <!-- Новость 2 -->
-                <a class="news-block" href="news/news_example.php">
-                    <div class="news-content-even">
-                        <div class="news-title">
-                            <h3>Заголовок</h3>
-                        </div>
-                        <div class="news-short">
-                            <p>Aliquam totam tenetur fugit maiores. Aliquam qui minus suscipit ut rerum distinctio fuga veritatis. Dolorum cupiditate architecto rem iusto eligendi aperiam. Aliquam totam tenetur. Aliquam totam tenetur fugit maiores. Aliquam qui minus suscipit ut rerum distinctio fuga veritatis. Dolorum cupiditate architecto rem...</p>
-                        </div>
-                    </div>
-                    <div class="news-img">
-                        <img src="src/img/news photo.png" alt="">
-                    </div>
-                </a>
-                <hr>
-                <!-- Новость 3 -->
-                <a class="news-block" href="news/news_example.php">
-                    <div class="news-img">
-                        <img src="src/img/news photo.png" alt="">
-                    </div>
-                    <div class="news-content-odd">
-                        <div class="news-title">
-                            <h3>Заголовок</h3>
-                        </div>
-                        <div class="news-short">
-                            <p>Aliquam totam tenetur fugit maiores. Aliquam qui minus suscipit ut rerum distinctio fuga veritatis. Dolorum cupiditate architecto rem iusto eligendi aperiam. Aliquam totam tenetur. Aliquam totam tenetur fugit maiores. Aliquam qui minus suscipit ut rerum distinctio fuga veritatis. Dolorum cupiditate architecto rem...</p>
-                        </div>
-                    </div>
-                </a>
-                <hr>
-                <!-- Новость 4 -->
-                <a class="news-block" href="news/news_example.php">
-                    <div class="news-content-even">
-                        <div class="news-title">
-                            <h3>Заголовок</h3>
-                        </div>
-                        <div class="news-short">
-                            <p>Aliquam totam tenetur fugit maiores. Aliquam qui minus suscipit ut rerum distinctio fuga veritatis. Dolorum cupiditate architecto rem iusto eligendi aperiam. Aliquam totam tenetur. Aliquam totam tenetur fugit maiores. Aliquam qui minus suscipit ut rerum distinctio fuga veritatis. Dolorum cupiditate architecto rem...</p>
-                        </div>
-                    </div>
-                    <div class="news-img">
-                        <img src="src/img/news photo.png" alt="">
-                    </div>
-                </a>
+                <?php
+                    $env = parse_ini_file('.env');
+                    $servername = $env['db_servername'];
+                    $username = $env['db_username'];
+                    $password = $env['db_password'];
+                    $dbname = 'news';
+
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+
+                    $sql = "SELECT * FROM $dbname ORDER BY `id` DESC LIMIT 4";
+                    if($result = $conn->query($sql)){
+                        while($row = $result->fetch_array()){
+                            echo '<a class="news-block" href="news/news_example.php">';
+                            echo    '<div class="news-img">';
+                            echo        '<img src="' . ($row['img'] ? $row['img'] : 'src/img/news placeholder.jpg') . '" alt="">';
+                            echo    '</div>';
+                            echo    '<div class="news-content">';
+                            echo        '<div class="news-title">';
+                            echo            '<h3>' . $row['title'] . '</h3>';
+                            echo $row['is_important'] ? '<span class="news-important">Важно</span>' : '';
+                            echo        '</div>';
+                            echo        '<div class="news-short">';
+                            echo            strip_tags($row['text']);
+                            echo        '</div>';
+                            echo    '</div>';
+                            echo '</a>';
+                            echo '<hr>';
+                        }
+                    }
+                ?>
+                
             </div>
             <div class="all-news">
                 <a class="nav-link" href="news.php">Все новости &#8594;</a>

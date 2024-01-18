@@ -117,6 +117,7 @@ hr {
 .left-side {
     width: 70%;
     margin-right: 20px;
+    overflow: hidden;
 }
 
 .section-title {
@@ -135,12 +136,9 @@ hr {
     object-fit: cover;
 }
 
-.news-content-odd{
+.news-content {
     margin: 0 0 0 20px;
-    }
-.news-content-even{
-    margin: 0 20px 0 0;
-    }
+}
 
 .news-title {
     display: flex;
@@ -149,8 +147,17 @@ hr {
     font-size: 42px;
     font-weight: 500;
 }
-.news-important {
-    margin: 0 0 12px 20px;
+.news-title>h3 {
+    /* не знаю как, но это работает. не трогать! */
+    width: calc(100vw - 200%);
+    max-width: 437px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-important {  
+    margin-left: 20px;
     font-size: 14px;
     color: var(--white);
     background-color: var(--red);
@@ -159,11 +166,12 @@ hr {
 }
 
 .news-short {
+    max-height: calc(1.6em * 6);
     font-size: 24px;
     line-height: 1.6em;
     text-align: justify;
-    max-height: 243px;
-    }
+    overflow: hidden;
+}
 
 .all-news {
     width: 100%;
@@ -347,4 +355,25 @@ hr {
     font-weight: 400;
     text-align: center;
     margin: 20px 0 25px;
+}
+
+
+/* Media */
+@media (max-width: 1695px) {
+    .news-title>h3 {
+        /* костыли */
+        max-width: 533px;
+    }
+}
+@media (max-width: 1485px) {
+    .nav-link {
+        margin-right: 23px;
+    }
+    .news-block {
+        display: block;
+        text-align: center;
+    }
+    .news-short {
+        display: none;
+    }
 }

@@ -37,30 +37,32 @@
             <a class="nav-link" href="../news.php">&#8592; Назад</a>
         </div>
         <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "news";
+            $env = parse_ini_file('../.env');
+            $servername = $env['db_host'];
+            $username = $env['news_db_username'];
+            $password = $env['news_db_password'];
+            $dbname = $env['news_db_name'];
+            $dbtable = $env['news_db_table'];
 
             $conn = new mysqli($servername, $username, $password, $dbname);
 
-            $sql = "SELECT * FROM `news` WHERE id = 1";
+            $sql = "SELECT * FROM $dbname WHERE id = " . $_GET['id'];
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
 
             echo '<h2 class="news-title">' . $row['title'] . '</h2>';
             echo '<hr>';
             if ($row['img']) {
-                echo '<div class="news-note-img">
-                        <img src="' . $row['img'] . '"" alt="">
-                      </div>';
+                // TODO: нескольно фото / видео
+                echo '<div class="news-note-img">';
+                echo    '<img src="' . $row['img'] . '"" alt="">';
+                echo '</div>';
             }
-
             // IMPORTANT: https://text-html.com/
-            if ($row['text']) {
-                echo '<div class="news-note-text">'. $row['text'] . '</div>';
-            }
-            
+            echo '<div class="news-note-text">';
+            echo    $row['text'];
+            echo '</div>';
+            // TODO: добавить кнопку перехода к предыдущей и к следующей новости
             $conn->close();
         ?>
     </main>

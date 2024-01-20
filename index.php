@@ -20,20 +20,20 @@
         <div class="left-side">
             <h2 class="section-title">Новости:</h2>
             <div class="news-container">
-                <!-- Новость 1 -->
                 <?php
                     $env = parse_ini_file('.env');
-                    $servername = $env['db_servername'];
-                    $username = $env['db_username'];
-                    $password = $env['db_password'];
-                    $dbname = 'news';
+                    $servername = $env['db_host'];
+                    $username = $env['news_db_username'];
+                    $password = $env['news_db_password'];
+                    $dbname = $env['news_db_name'];
+                    $dbtable = $env['news_db_table'];
 
                     $conn = new mysqli($servername, $username, $password, $dbname);
-
-                    $sql = "SELECT * FROM $dbname ORDER BY `id` DESC LIMIT 4";
+                    
+                    $sql = "SELECT * FROM $dbtable ORDER BY `id` DESC LIMIT 4";
                     if($result = $conn->query($sql)){
                         while($row = $result->fetch_array()){
-                            echo '<a class="news-block" href="news/news_example.php">';
+                            echo '<a class="news-block" href="news/news_example.php?id=' . $row['id'] . '">';
                             echo    '<div class="news-img">';
                             echo        '<img src="' . ($row['img'] ? $row['img'] : 'src/img/news placeholder.jpg') . '" alt="">';
                             echo    '</div>';
@@ -50,6 +50,11 @@
                             echo '<hr>';
                         }
                     }
+                    // не удаётся подключиться к БД
+                    else {
+                        echo '<h1 style="color: var(--red);">Произошла ошибка. Попробуйте позже!</h1>';
+                    }
+                    $conn->close();
                 ?>
                 
             </div>

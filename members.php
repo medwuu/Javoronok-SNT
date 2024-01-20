@@ -42,20 +42,24 @@
                     <br>
                     <?php
                         $env = parse_ini_file('.env');
-                        $servername = $env['db_servername'];
-                        $username = $env['db_username'];
-                        $password = $env['db_password'];
-                        $dbname = 'debtors';
+                        $servername = $env['db_host'];
+                        $username = $env['debtors_db_username'];
+                        $password = $env['debtors_db_password'];
+                        $dbname = $env['debtors_db_name'];
+                        $dbtable = $env['debtors_db_table'];
 
                         $conn = new mysqli($servername, $username, $password, $dbname);
 
-                        $sql = "SELECT * FROM debtors ORDER BY house_number";
+                        $sql = "SELECT * FROM $dbtable ORDER BY house_number";
                         $debtors = $conn->query($sql);
-
                         if ($debtors->num_rows > 0) {
                             while ($row = $debtors->fetch_assoc()) {
                                 echo "<b>" . $row["house_number"] . " (" . $row["fio"] . ") – " . $row["debt"] . " рублей;</b><br>";
                             }
+                        }
+                        // TODO: выводить это или "ошибка подключения"?
+                        else {
+                            echo 'Нет должников!';
                         }
                         
                         $sql = "SELECT SUM(debt) AS total_debt FROM debtors";

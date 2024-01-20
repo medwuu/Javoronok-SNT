@@ -15,6 +15,7 @@
     width: 100%;
     max-width: 688px;
     max-height: 447px;
+    object-fit: cover;
 }
 
 .news-title {
@@ -23,7 +24,17 @@
     align-items: center;
 }
 
+.news-title h3 {
+    max-height: 1.6em;
+    overflow: hidden;
+}
+
 .news-title .nav-link {
     font-size: 34px;
     padding: 8px 16px;
+    white-space: nowrap;
+}
+
+.news-important {
+    margin: 1em 30px 0 0;
 }

@@ -36,3 +36,7 @@ ul {
     color: blue;
     text-decoration: underline;
 }
+
+.prev-next-btns {
+    text-align: center;
+}

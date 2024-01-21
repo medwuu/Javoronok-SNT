@@ -46,9 +46,8 @@
 
             $conn = new mysqli($servername, $username, $password, $dbname);
 
-            $sql = "SELECT * FROM $dbname WHERE id = " . $_GET['id'];
-            $result = $conn->query($sql);
-            $row = $result->fetch_assoc();
+            $sql = "SELECT * FROM $dbtable WHERE id = " . $_GET['id'];
+            $row = $conn->query($sql)->fetch_assoc();
 
             echo '<h2 class="news-title">' . $row['title'] . '</h2>';
             echo '<hr>';
@@ -62,7 +61,20 @@
             echo '<div class="news-note-text">';
             echo    $row['text'];
             echo '</div>';
-            // TODO: добавить кнопку перехода к предыдущей и к следующей новости
+            echo '<hr>';
+
+            $prev_sql = "SELECT id FROM $dbtable WHERE id<" . $_GET['id'] . " ORDER BY id DESC LIMIT 1";
+            $next_sql = "SELECT id FROM $dbtable WHERE id>" . $_GET['id'] . " ORDER BY id ASC LIMIT 1";
+            $prev_result = $conn->query($prev_sql)->fetch_assoc();
+            $next_result = $conn->query($next_sql)->fetch_assoc();
+            if ($prev_result || $next_result) {
+                echo '<div class="prev-next-btns">';
+                echo $prev_result ? '<a class="nav-link" href="news_example.php?id=' . $prev_result['id'] . '">&#8592; Предыдущая новость</a>' : '';
+                echo $next_result ? '<a class="nav-link" href="news_example.php?id=' . $next_result['id'] . '">&#8594; Следующая новость</a>' : '';
+                echo '</div>';
+            }
+
+
             $conn->close();
         ?>
     </main>

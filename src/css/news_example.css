@@ -22,9 +22,14 @@ ul {
     margin-top: 50px;
 }
 
+.news-date {
+    margin-top: 1.5em;
+    font-style: italic;
+    text-align: right;
+}
+
 .news-note-img img {
     width: 100%;
-    height: 573px;
     object-fit: cover;
 }
 

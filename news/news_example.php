@@ -50,6 +50,7 @@
             $row = $conn->query($sql)->fetch_assoc();
 
             echo '<h2 class="news-title">' . $row['title'] . '</h2>';
+            echo '<div class="news-date">Опубликовано ' . substr($row['creation_date'], 8, 2)  . '.' . substr($row['creation_date'], 5, 2) . '.' . substr($row['creation_date'], 0, 4) . '</div>';
             echo '<hr>';
             if ($row['img']) {
                 // TODO: нескольно фото / видео

@@ -25,6 +25,10 @@ body {
     background-color: var(--white);
 }
 
+.hide-element {
+    display: none !important;
+}
+
 br, p {
     margin: 0;
     padding: 0;
@@ -107,6 +111,61 @@ hr {
 }
 
 
+/* Burger */
+.burger {
+    display: none;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 50px;
+    z-index: 50;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 80%;
+    height: 3px;
+    /* transform: scale(1); */
+    background-color: var(--black);
+}
+
+.burger::before, .burger::after {
+    position: absolute;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: var(--black);
+    transition: all .2s ease;
+}
+.burger::before {
+    top: 0;
+}
+.burger::after {
+    bottom: 0;
+}
+
+.burger.burger-active {
+    position: absolute;
+    top: 10%;
+    right: 0;
+}
+
+.burger.burger-active span {
+    display: none;
+}
+.burger.burger-active::before {
+    top: 50%;
+    transform: rotate(45deg);
+}
+.burger.burger-active::after {
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
+
 /* Main */
 .main {
     display: flex;
@@ -148,7 +207,7 @@ hr {
     font-size: 42px;
     font-weight: 500;
 }
-.news-title>h3 {
+.news-title h3 {
     /* не знаю как, но это работает. не трогать! */
     width: calc(100vw - 200%);
     max-width: 437px;
@@ -361,14 +420,12 @@ hr {
 
 /* Media */
 @media (max-width: 1695px) {
-    .news-title>h3 {
-        /* костыли */
-        max-width: 533px;
+    .news-title {
+        display: inline-flex;
     }
-}
-@media (max-width: 1485px) {
-    .nav-link {
-        margin-right: 23px;
+    .news-title h3 {
+        width: 50vw;
+        max-width: none;
     }
     .news-block {
         display: block;
@@ -376,5 +433,52 @@ hr {
     }
     .news-short {
         display: none;
+    }
+}
+
+@media (max-width: 1485px) {
+    .nav-link {
+        margin-right: 23px;
+    }
+}
+
+@media (max-width: 1390px) {
+    .navigation {
+        display: none;
+    }
+
+    .navigation {
+        display: none;
+        position: fixed;
+        margin: auto 0;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: var(--gray);
+        z-index: 10;
+    }
+    .nav-link:first-child {
+        margin-top: 50%;
+    }
+
+    .navigation-open {
+        display: block;
+        overflow-y: hidden;
+    }
+
+    .nav-link {
+        margin: 0 auto;
+        display: block;
+        color: var(--black);
+        background: none;
+    }
+    .nav-link:hover {
+        color: var(--active-btn);
+        background: none;
+    }
+
+    .burger {
+        display: flex;
     }
 }

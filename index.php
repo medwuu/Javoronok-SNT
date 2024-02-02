@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="src/img/favicons/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
@@ -67,7 +71,7 @@
             <div class="weather">
                 <!-- TODO для дебага -->
                 <!-- <img src="src/img/weather.png" alt=""> -->
-                <div id="gsInformerID-<?php echo parse_ini_file('.env')['GISMETEO_TOKEN']; ?>" class="gsInformer" style="width:560px;height:232px">
+                <div id="gsInformerID-<?php echo parse_ini_file('.env')['GISMETEO_TOKEN']; ?>" class="gsInformer">
                     <div class="gsIContent">
                         <div id="cityLink">
                             <a href="https://www.gismeteo.ru/weather-moscow-4368/" target="_blank" title="Погода в Москве">

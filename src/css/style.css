@@ -49,6 +49,7 @@ hr {
     height: 5px;
     background-color: var(--gray);
     border: none;
+    border-radius: 3px;
 }
 
 .container {
@@ -105,7 +106,8 @@ hr {
     background-color: var(--active-btn);
 }
 
-.nav-link-active, .nav-link-active:hover {
+.nav-link-active,
+.nav-link-active:hover {
     background-color: #858585;
     color: var(--black);
 }
@@ -119,7 +121,7 @@ hr {
     align-items: center;
     width: 30px;
     height: 30px;
-    margin-right: 50px;
+    margin-right: 20px;
     z-index: 50;
     cursor: pointer;
 }
@@ -131,7 +133,8 @@ hr {
     background-color: var(--black);
 }
 
-.burger::before, .burger::after {
+.burger::before,
+.burger::after {
     position: absolute;
     left: 0;
     content: "";
@@ -183,7 +186,7 @@ hr {
 .section-title {
     font-size: 47px;
     text-align: center;
-    margin: 0 0 37px 0;
+    margin-bottom: 37px;
 }
 
 .news-block {
@@ -203,7 +206,7 @@ hr {
 .news-title {
     display: flex;
     align-items: baseline;
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
     font-size: 42px;
     font-weight: 500;
 }
@@ -238,7 +241,9 @@ hr {
     margin: 60px auto 0;
     text-align: center;
 }
-
+.all-news .nav-link {
+    display: inline-block;
+}
 
 
 /* Right side */
@@ -282,7 +287,6 @@ hr {
 
 .form-input {
     width: 100%;
-    max-width: 560px;
     height: 50px;
     background-color: var(--gray);
     border: 0;
@@ -298,7 +302,8 @@ hr {
 }
 
 .form-file {
-    height: auto;
+    height: auto !important;
+    padding: 5px 0 5px 5px;
 }
 .form-result {
     font-size: 30px;
@@ -333,7 +338,7 @@ hr {
 }
 
 .footer-nav {
-    width: 405px;
+    width: 20%;
     margin-top: 36px;
 }
 
@@ -348,7 +353,6 @@ hr {
 .footer-nav-link {
     font-weight: 100;
     color: var(--white);
-    letter-spacing: 13%;
 }
 
 .footer-nav-link-active {
@@ -358,8 +362,8 @@ hr {
 }
 
 .footer-address {
-    width: 541px;
-    margin: 36px 164px 0;
+    width: 33%;
+    margin-top: 36px;
 }
 
 .footer-address p {
@@ -377,7 +381,6 @@ hr {
 
 .footer-contacts {
     margin-top: 36px;
-    width: 405px;
     color: var(--white);
 }
 
@@ -431,8 +434,14 @@ hr {
         display: block;
         text-align: center;
     }
+    .news-title {
+        margin-bottom: 0;
+    }
     .news-short {
         display: none;
+    }
+    .form-input {
+        width: 95%;
     }
 }
 
@@ -446,7 +455,6 @@ hr {
     .navigation {
         display: none;
     }
-
     .navigation {
         display: none;
         position: fixed;
@@ -458,27 +466,235 @@ hr {
         background-color: var(--gray);
         z-index: 10;
     }
-    .nav-link:first-child {
-        margin-top: 50%;
+    .navigation .nav-link:first-child {
+        margin-top: 30vh;
     }
-
     .navigation-open {
         display: block;
         overflow-y: hidden;
     }
-
-    .nav-link {
+    .navigation .nav-link {
         margin: 0 auto;
         display: block;
         color: var(--black);
         background: none;
     }
-    .nav-link:hover {
+    .navigation .nav-link:hover {
         color: var(--active-btn);
         background: none;
     }
-
     .burger {
         display: flex;
+    }
+
+    .news-title h3 {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 1160px) {
+    .logo-photo img {
+        max-width: 100px;
+    }
+    .logo-name {
+        font-size: 40px;
+    }
+
+    .section-title {
+        font-size: 35px;
+    }
+    .news-img img {
+        width: 100%;
+    }
+    .news-title {
+        font-size: 20px;
+    }
+    .news-title h3 {
+        width: 25vw;
+    }
+
+    .gsInformer,
+    .map iframe {
+        width: 445px !important;
+    }
+    .form-label {
+        font-size: 21px;
+    }
+    .form-input {
+        height: 30px;
+    }
+    .form-message {
+        height: 300px;
+    }
+    .form-file {
+        height: auto;
+        font-size: 21px;
+    }
+    .form-result {
+        font-size: 22px;
+    }
+
+    .footer-nav-item,
+    .footer-address p, .footer-contacts-tel {
+        font-size: 25px;
+    }
+    .footer-contacts-title,
+    .footer-map-link{
+        font-size: 30px;
+    }
+    .footer-contacts-tel {
+        margin: 20px 0;
+    }
+    .footer-contacts-social svg {
+        height: 100px;
+    }
+    .footer-contacts-social-name {
+        font-size: 16px;
+    }
+    .footer-contacts-subscribe {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 920px) {
+    .section-title {
+        margin-bottom: 15px;
+    }
+    .gsInformer,
+    .map iframe {
+        width: 330px !important;
+    }
+    .map-text,
+    .write-to-governance legend,
+    .footer-contacts-title {
+        font-size: 28px;
+    }
+    .footer-map-link {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 750px) {
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        background-color: var(--white);
+        box-shadow: 0 0 15px var(--black); 
+        z-index: 50;
+    }
+    .burger.burger-active {
+        top: 30%;
+    }
+    .main {
+        margin-top: 150px;
+        display: block;
+    }
+
+    .left-side {
+        width: 95%;
+        margin: 0 auto;
+    }
+    .news-title h3 {
+        width: 75vw;
+    }
+    hr {
+        margin: 15px 0;
+    }
+    .all-news {
+        margin-top: 0;
+    }
+
+    .right-side {
+        margin: 100px auto 0;
+        width: 95%;
+    }
+    .gsInformer, .map iframe {
+        width: 95vw !important;
+    }
+    .form-input {
+        width: 100%;
+        font-size: 22px;
+    }
+    .form-message {
+        height: 5em;
+        min-height: 1em;
+        max-height: 10em;
+        resize: vertical;
+    }
+    .submit-btn {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+    .footer-inner {
+        display: block;
+        width: 95%;
+        padding-top: 10px;
+    }
+    .footer-nav {
+        display: none;
+    }
+    .footer-address {
+        width: 100%;
+    }
+    .footer-address p {
+        margin-bottom: 10px;
+        text-align: justify;
+    }
+    .footer-map-link {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+    .footer-contacts {
+        margin-top: 50px;
+        text-align: center;
+    }
+    .footer-contacts-social {
+        justify-content: center; 
+    }
+    .footer-contacts-social a:first-child {
+        margin-right: 20px;
+    }
+    .footer-contacts-social a:last-child {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .news-title h3 {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .logo-photo img {
+        max-width: 80px;
+    }
+    .logo-name {
+        font-size: 30px;
+    }
+    .main {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo-photo img {
+        max-width: 66px;
+    }
+    .logo-name {
+        font-size: 25px;
+    }
+    .main {
+        margin-top: 90px;
+    }
+}
+
+@media (max-width: 350px) {
+    .news-title h3 {
+        width: 50vw;
     }
 }

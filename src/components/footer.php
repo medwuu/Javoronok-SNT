@@ -2,22 +2,22 @@
     <div class="footer-inner container">
         <nav class="footer-nav">
             <div class="footer-nav-item">
-                <?php echo '<a class="footer-nav-link' . (basename($_SERVER['PHP_SELF']) == 'about.php' ? ' footer-nav-link-active' : '') . '" href="about.php">О СНТ</a>'; ?>
+                <?php echo '<a class="footer-nav-link' . (basename($_SERVER['PHP_SELF']) == 'about.php' ? ' footer-nav-link-active' : '') . '" href="' . $layers . 'about.php">О СНТ</a>'; // $layers берётся из header.php // ?>
             </div>
             <div class="footer-nav-item">
-                <?php echo '<a class="footer-nav-link' . (basename($_SERVER['PHP_SELF']) == 'news.php' ? ' footer-nav-link-active' : '') . '" href="news.php">Новости</a>'; ?>
+                <?php echo '<a class="footer-nav-link' . (basename($_SERVER['PHP_SELF']) == 'news.php' ? ' footer-nav-link-active' : '') . '" href="' . $layers . 'news.php">Новости</a>'; ?>
             </div>
             <div class="footer-nav-item">
-                <?php echo '<a class="footer-nav-link' . (basename($_SERVER['PHP_SELF']) == 'management.php' ? ' footer-nav-link-active' : '') . '" href="management.php">Органы управления</a>'; ?>
+                <?php echo '<a class="footer-nav-link' . (basename($_SERVER['PHP_SELF']) == 'management.php' ? ' footer-nav-link-active' : '') . '" href="' . $layers . 'management.php">Органы управления</a>'; ?>
             </div>
             <div class="footer-nav-item">
-                <?php echo '<a class="footer-nav-link' . (basename($_SERVER['PHP_SELF']) == 'documents.php' ? ' footer-nav-link-active' : '') . '" href="documents.php">Документы</a>'; ?>
+                <?php echo '<a class="footer-nav-link' . (basename($_SERVER['PHP_SELF']) == 'documents.php' ? ' footer-nav-link-active' : '') . '" href="' . $layers . 'documents.php">Документы</a>'; ?>
             </div>
             <div class="footer-nav-item">
-                <?php echo '<a class="footer-nav-link' . (basename($_SERVER['PHP_SELF']) == 'members.php' ? ' footer-nav-link-active' : '') . '" href="members.php">Членам СНТ</a>'; ?>
+                <?php echo '<a class="footer-nav-link' . (basename($_SERVER['PHP_SELF']) == 'members.php' ? ' footer-nav-link-active' : '') . '" href="' . $layers . 'members.php">Членам СНТ</a>'; ?>
             </div>
             <div class="footer-nav-item">
-                <?php echo '<a class="footer-nav-link' . (basename($_SERVER['PHP_SELF']) == 'contacts.php' ? ' footer-nav-link-active' : '') . '" href="contacts.php">Контакты</a>'; ?>
+                <?php echo '<a class="footer-nav-link' . (basename($_SERVER['PHP_SELF']) == 'contacts.php' ? ' footer-nav-link-active' : '') . '" href="' . $layers . 'contacts.php">Контакты</a>'; ?>
             </div>
         </nav>
         <address class="footer-address">

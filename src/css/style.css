@@ -25,6 +25,7 @@ body {
     background-color: var(--white);
 }
 
+/* FIXME при сворачивании burger viewport переносится в начало */
 .hide-element {
     display: none !important;
 }
@@ -466,9 +467,6 @@ hr {
         background-color: var(--gray);
         z-index: 10;
     }
-    .navigation .nav-link:first-child {
-        margin-top: 30vh;
-    }
     .navigation-open {
         display: block;
         overflow-y: hidden;
@@ -479,9 +477,15 @@ hr {
         color: var(--black);
         background: none;
     }
+    .navigation .nav-link:first-child {
+        margin-top: 30vh;
+    }
     .navigation .nav-link:hover {
         color: var(--active-btn);
         background: none;
+    }
+    .navigation .nav-link.nav-link-active {
+        color: #716363;
     }
     .burger {
         display: flex;
@@ -696,5 +700,11 @@ hr {
 @media (max-width: 350px) {
     .news-title h3 {
         width: 50vw;
+    }
+}
+
+@media (max-width: 300px) {
+    .logo-photo {
+        display: none;
     }
 }

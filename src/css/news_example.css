@@ -7,7 +7,7 @@ ul {
 }
 
 .small-container {
-    max-width: 1396px;
+    width: 85%;
 }
 
 .back-btn a {
@@ -17,7 +17,7 @@ ul {
 
 .news-title {
     font-size: 60px;
-    line-height: 54px;
+    line-height: 1em;
     text-align: justify;
     margin-top: 50px;
 }
@@ -37,11 +37,66 @@ ul {
     font-size: 30px;
 }
 
+.news-note-text a {
+    color: blue;
+    text-decoration: underline;
+}
+
 .news-note-link {
     color: blue;
     text-decoration: underline;
 }
 
 .prev-next-btns {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.prev-btn {
+    margin-right: 47px;
+}
+
+
+@media (max-width: 1390px) {
+    .small-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .back-btn a {
+        font-size: 20px;
+    }
+    .news-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 750px) {
+    .news-title {
+        font-size: 35px;
+    }
+    .news-date {
+        margin-top: 1em;
+    }
+    .news-note-text {
+        font-size: 20px;
+    }
+    .prev-next-btns {
+        display: block;
+        text-align: center;
+    }
+    .prev-btn {
+        margin: 0 0 20px 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .news-title {
+        margin-top: 30px;
+    }
+    .back-btn>.nav-link,
+    .prev-next-btns .nav-link {
+        font-size: 15px;
+    }
 }

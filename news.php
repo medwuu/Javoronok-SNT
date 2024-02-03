@@ -49,6 +49,9 @@
                         echo        '</div>';
                         echo    '</a>';
                         echo '</div>';
+                        if ($news_num%2) {
+                            echo '<hr class="only-mobile">';
+                        }
                         if ($news_num%2==0) {
                             echo '</div>';
                             echo '<hr>';

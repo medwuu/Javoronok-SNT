@@ -8,6 +8,7 @@
     border-bottom: 5px solid var(--gray);
     padding: 15px 0;
     transition: all .2s linear;
+    text-align: left;
 }
 .spoiler-text-link:last-child {
     border-bottom: 0;
@@ -36,4 +37,34 @@
 .archive-link:hover {
     color: var(--black);
     background-color: var(--active-btn);
+}
+
+
+@media (max-width: 1160px) {
+    .spoiler-text-link {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 900px) {
+    .spoiler-text-link {
+        font-size: 25px;
+        padding: 10px 0;
+    }
+    .archive-link {
+        font-size: 25px;
+        padding: 12px 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .spoiler-text {
+        padding: 10px 30px;
+    }
+}
+
+@media (max-width: 400px) {
+    .spoiler-text {
+        padding: 10px;
+    }
 }

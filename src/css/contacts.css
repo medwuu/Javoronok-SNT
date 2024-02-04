@@ -9,7 +9,7 @@
 
 main p {
     font-size: 30px;
-    line-height: 70px;
+    line-height: 2em;
 }
 
 main a {
@@ -19,4 +19,20 @@ main a {
 
 .map {
     text-align: center;
+}
+
+
+@media (max-width: 1680px) {
+    .main {
+        width: 95%;
+    }
+}
+
+@media (max-width: 1160px) {
+    main p {
+        font-size: 20px;
+    }
+    .map iframe{
+        width: 100% !important;
+    }
 }

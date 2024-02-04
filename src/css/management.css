@@ -22,33 +22,31 @@
 
 .spoiler-title {
     margin: 0;
-    padding: 22px 0 22px 64px;
+    padding: 22px 5px 22px 64px;
     background-color: var(--dark-red);
     border-radius: 50px;
     position: relative;
     cursor: pointer;
+    text-align: left;
+    user-select: none;
 }
-.spoiler-title.arrow::before {
-    position: absolute;
-    content: '';
-    width: 30px;
-    height: 3px;
-    background-color: var(--white);
-    top: 55px;
-    left: 10px;
-    transform: rotate(45deg);
-    transition: all .2s linear;
-}
+.spoiler-title.arrow::before,
 .spoiler-title.arrow::after {
     position: absolute;
     content: '';
     width: 30px;
     height: 3px;
     background-color: var(--white);
-    top: 55px;
+    top: 50%;
+    transition: all .2s linear;
+}
+.spoiler-title.arrow::before {
+    left: 10px;
+    transform: rotate(45deg);
+}
+.spoiler-title.arrow::after {
     left: 29px;
     transform: rotate(-45deg);
-    transition: all .2s linear;
 }
 .spoiler-title.active::before {
     transform: rotate(-45deg);
@@ -65,6 +63,7 @@
     font-size: 20px;
     padding: 30px 64px 20px;
     display: none;
+    text-align: justify;
 }
 
 .spoiler-text a {
@@ -72,4 +71,85 @@
 }
 .spoiler-text a:hover {
     text-decoration: underline;
+}
+
+
+@media (max-width: 1680px) {
+    .main {
+        width: 95%;
+    }
+}
+
+@media (max-width: 1390px) {
+    .spoiler {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1160px) {
+    .spoiler {
+        margin-top: 50px;
+    }
+    .spoiler-title.arrow::before {
+        width: 20px;
+        left: 15px;
+    }
+    .spoiler-title.arrow::after {
+        width: 20px;
+        left: 28px;
+    }
+}
+
+@media (max-width: 900px) {
+    .spoiler-title {
+        padding: 12px 5px 12px 64px;
+    }
+    .spoiler-title.arrow::before,
+    .spoiler-title.arrow::after {
+        top: 30px;
+    }
+    .spoiler-title.section-title {
+        font-size: 25px;
+    }
+    .spoiler-text {
+        font-size: 16px;
+        padding: 10px 64px;
+    }
+}
+
+@media (max-width: 750px) {
+    .main {
+        margin-top: 130px;
+    }
+    .spoiler-item {
+        margin-bottom: 10px;
+    }
+    .section-title {
+        font-size: 30px;
+    }
+    .spoiler {
+        margin-top: 30px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .main {
+        margin-top: 100px;
+    }
+    .spoiler-text {
+        border-radius: 30px;
+    }
+}
+
+@media (max-width: 300px) {
+    .section-title {
+        font-size: 25px;
+    }
+    .spoiler-title.section-title {
+        font-size: 20px;
+    }
+    .spoiler-text {
+        font-size: 14px;
+    }
 }

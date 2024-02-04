@@ -25,9 +25,9 @@ body {
     background-color: var(--white);
 }
 
-/* FIXME при сворачивании burger viewport переносится в начало */
-.hide-element {
-    display: none !important;
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
 }
 
 br, p {
@@ -71,6 +71,7 @@ hr {
 .logo {
     display: flex;
     align-items: end;
+    z-index: 2;
 }
 
 .logo-photo img {
@@ -123,7 +124,7 @@ hr {
     width: 30px;
     height: 30px;
     margin-right: 20px;
-    z-index: 50;
+    z-index: 1;
     cursor: pointer;
 }
 
@@ -272,10 +273,6 @@ hr {
 
 .form-group {
     margin-bottom: 15px;
-}
-/* FIXME */
-.form-group:last-child {
-    margin-bottom: 20px;
 }
 
 .form-label {
@@ -465,7 +462,7 @@ hr {
         top: 0;
         left: 0;
         background-color: var(--gray);
-        z-index: 10;
+        z-index: 1;
     }
     .navigation-open {
         display: block;
@@ -586,7 +583,7 @@ hr {
         margin: 0;
         background-color: var(--white);
         box-shadow: 0 0 15px var(--black); 
-        z-index: 50;
+        z-index: 9; /* погода перекрывает, поэтому именно 9 */
     }
     .burger.burger-active {
         top: 30%;
@@ -599,6 +596,10 @@ hr {
     .left-side {
         width: 95%;
         margin: 0 auto;
+    }
+    .news-block:not(:first-of-type),
+    hr:not(:first-of-type) {
+        display: none;
     }
     .news-title h3 {
         width: 75vw;
@@ -616,6 +617,8 @@ hr {
     }
     .gsInformer, .map iframe {
         width: 95vw !important;
+        height: 40vh;
+        max-height: 350px;
     }
     .form-input {
         width: 100%;

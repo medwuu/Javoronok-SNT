@@ -23,7 +23,7 @@
 .spoiler-title {
     margin: 0;
     padding: 22px 5px 22px 64px;
-    background-color: var(--dark-red);
+    background-color: var(--dark-blue);
     border-radius: 50px;
     position: relative;
     cursor: pointer;
@@ -58,7 +58,7 @@
 }
 
 .spoiler-text {
-    background-color: var(--dark-red);
+    background-color: var(--dark-blue);
     border-radius: 50px;
     font-size: 20px;
     padding: 30px 64px 20px;

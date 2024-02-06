@@ -4,6 +4,7 @@
     --gray: #d6d6d6;
     --red: #ff3234;
     --dark-red: #990000;
+    --dark-blue: #2b4870;
     --dark-gray: #575757;
     --active-btn: #ffdd00;
 }
@@ -327,7 +328,6 @@ hr {
 /* Footer */
 .footer {
     background-color: var(--dark-gray);
-    /* height: 550px; */
 }
 
 .footer-inner {
@@ -416,6 +416,22 @@ hr {
     font-weight: 400;
     text-align: center;
     margin: 20px 0 25px;
+}
+
+.creator-link {
+    padding: 10px;
+}
+.creator-link a {
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.creator-link a span {
+    padding-right: 10px;
+}
+.creator-link a svg {
+    max-width: 1.5em;
 }
 
 
@@ -709,5 +725,8 @@ hr {
 @media (max-width: 300px) {
     .logo-photo {
         display: none;
+    }
+    .creator-link {
+        font-size: 14px;
     }
 }

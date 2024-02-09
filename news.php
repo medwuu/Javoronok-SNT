@@ -21,6 +21,8 @@
         <h3 class="section-title">Новости СНТ:</h3>
         <div class="news-container">
             <?php
+                // TODO: вынести в .htaccess или оставить
+                if (!isset($_GET['page'])) { $_GET['page'] = 1; }
                 $env = parse_ini_file('.env');
                 $servername = $env['db_host'];
                 $username = $env['news_db_username'];
@@ -29,8 +31,10 @@
                 $dbtable = $env['news_db_table'];
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
-
-                $sql = "SELECT * FROM $dbtable ORDER BY `id` DESC";
+                $max_news_id = $conn->query("SELECT `id` FROM `$dbtable` ORDER BY `id` DESC LIMIT 1")->fetch_array()[0];
+                if ($_GET['page'] * 10 - 10 > $max_news_id) { header('Location: /news.php'); }
+                $first_news = $max_news_id - 10 * ($_GET['page'] - 1);
+                $sql = "SELECT * FROM `$dbtable` WHERE `id`<=" . $first_news . " ORDER BY `id` DESC LIMIT 10";
                 if($result = $conn->query($sql)){
                     $news_num = 1;
                     while($row = $result->fetch_array()){
@@ -56,8 +60,26 @@
                             echo '</div>';
                             echo '<hr>';
                         }
-                        
                         $news_num++;
+                    } // FIXME: навигация на последней странице с нечётным кол-вом новостей
+
+                    $prev_sql = "SELECT `id` FROM `$dbtable` WHERE `id`<=" . ($first_news - 10) . " ORDER BY `id` DESC LIMIT 1";
+                    $next_sql = "SELECT `id` FROM `$dbtable` WHERE `id`>" . $first_news . " ORDER BY `id` DESC LIMIT 1";
+                    $prev_result = $conn->query($prev_sql)->fetch_assoc();
+                    $next_result = $conn->query($next_sql)->fetch_assoc();
+                    if ($prev_result || $next_result) {
+                        echo '<div class="prev-next-btns">';
+                        if ($prev_result) {
+                            echo '<div class="prev-btn">';
+                            echo    '<a class="nav-link" href="news.php?page=' . ($_GET['page'] + 1) . '">&#8592; Ранние новости</a>';
+                            echo '</div>';
+                        }
+                        if ($next_result) {
+                            echo '<div class="next-btn">';
+                            echo    '<a class="nav-link" href="news.php?page=' . ($_GET['page'] - 1) . '">Свежие новости &#8594;</a>';
+                            echo '</div>';
+                        }
+                        echo '</div>';
                     }
                 }
                 else {
@@ -65,7 +87,6 @@
                 }
                 $conn->close();
             ?>
-            <!-- TODO: динамическая загрузка новостей -->
         </div>
     </main>
 

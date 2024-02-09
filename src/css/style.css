@@ -614,7 +614,7 @@ hr {
         margin: 0 auto;
     }
     .news-block:not(:first-of-type),
-    hr:not(:first-of-type) {
+    .left-side>.news-container hr:not(:first-of-type) {
         display: none;
     }
     .news-title h3 {

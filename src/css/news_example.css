@@ -47,15 +47,6 @@ ul {
     text-decoration: underline;
 }
 
-.prev-next-btns {
-    display: flex;
-    justify-content: center;
-}
-
-.prev-btn {
-    margin-right: 47px;
-}
-
 
 @media (max-width: 1390px) {
     .small-container {
@@ -82,21 +73,10 @@ ul {
     .news-note-text {
         font-size: 20px;
     }
-    .prev-next-btns {
-        display: block;
-        text-align: center;
-    }
-    .prev-btn {
-        margin: 0 0 20px 0;
-    }
 }
 
 @media (max-width: 500px) {
     .news-title {
         margin-top: 30px;
-    }
-    .back-btn>.nav-link,
-    .prev-next-btns .nav-link {
-        font-size: 15px;
     }
 }

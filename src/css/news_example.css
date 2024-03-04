@@ -28,13 +28,19 @@ ul {
     text-align: right;
 }
 
+.news-note-img {
+    text-align: center;
+}
+
 .news-note-img img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 75vh;
     object-fit: cover;
 }
 
 .news-note-text {
     font-size: 30px;
+    white-space: pre-wrap;
 }
 
 .news-note-text a {

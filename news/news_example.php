@@ -45,9 +45,9 @@
                 echo '</div>';
             }
             // IMPORTANT: https://text-html.com/
-            echo '<div class="news-note-text">';
+            echo '<pre class="news-note-text">';
             echo    $row['text'];
-            echo '</div>';
+            echo '</pre>';
             echo '<hr>';
 
             $prev_sql = "SELECT id FROM $dbtable WHERE id<" . $_GET['id'] . " ORDER BY id DESC LIMIT 1";
